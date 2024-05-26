@@ -1,0 +1,10 @@
+<p>
+    <b>{{ question }}</b>
+    <br /><br />
+    {% for action in actions %}
+        <i>{{ action.verb }} <b>{{ action.noun }}</b>...</i>
+    {% endfor %}
+    <br /><br />
+    {{ answer }}
+    <div id="thinking" class="htmx-indicator">Thinking...</div>
+</p>

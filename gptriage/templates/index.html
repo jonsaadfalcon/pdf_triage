@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GPTriage</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    </head>
+    <body>
+        <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+
+        <div class="pure-menu pure-menu-horizontal">
+            <a href="#" class="pure-menu-heading pure-menu-link">GPTriage</a>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item">
+                    <select name="document" hx-get="/page" hx-target="#page">
+                        <option value="{{ document }}">Choose a document</option>
+                        {% for document in documents %}
+                            <option value="{{document}}">{{document}}</option>
+                        {% endfor %}
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <div class="pure-g" id="page">
+            {% include 'page.html' %}
+        </div>
+    </body>
+</html>

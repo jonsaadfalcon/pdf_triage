@@ -1,0 +1,15 @@
+<div id="answer" style="min-height:100px;background:#ddd;padding:1px 10px 10px 10px;">
+    <h3>Ask AI</h3>
+    <p>Ask a question about the document below.</p>
+    <div id="thinking" class="htmx-indicator">Thinking...</div>
+</div>
+
+<form hx-get="/ask" hx-target="#answer" class="pure-form" hx-indicator="#thinking">
+    <input type="hidden" name="document" value="{{document}}" />
+    <fieldset>
+        <textarea name="question" class="pure-input-1" placeholder="Ask anything about this document."></textarea>
+    </fieldset>
+    <button type="submit" class="pure-button pure-input-1 pure-button-primary">
+        Ask AI
+    </button>
+</form>
